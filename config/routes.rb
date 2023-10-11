@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "contestants#index"
 
-  get "/contestants", to: "contestants#index"
+  resources :contestants
 end

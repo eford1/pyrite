@@ -1,9 +1,30 @@
 <h1>Golden Bachelor Season 1</h1>
 
-<ul>
+<ul class = "contestant-list">
   <% @contestants.each do |contestant| %>
-    <li>
-      <%= contestant.person.name %>
-    </li>
+  	<% if contestant.eliminated_ep.nil? %>
+	    <li>
+	      <%= link_to contestant do %> 
+	      	<img src = "https://as2.ftcdn.net/v2/jpg/02/04/80/99/1000_F_204809921_XhW86kM99FdTDkkOMT9nVhloE6PiU20r.jpg" />
+	    	<br />
+	    	<%= contestant.person.name %>
+	      <% end %>
+	    </li>
+	<% end %>
+  <% end %>
+
+
+  <ul class = "contestant-list eliminated">
+  <% @contestants.each do |contestant| %>
+  	<% if !contestant.eliminated_ep.nil? %>
+	    <li>
+	    	
+	      <%= link_to contestant do %> 
+	      	<img src = "https://as2.ftcdn.net/v2/jpg/02/04/80/99/1000_F_204809921_XhW86kM99FdTDkkOMT9nVhloE6PiU20r.jpg" />
+	    	<br />
+	    	<%= contestant.person.name %>
+	      <% end %>
+	    </li>
+	<% end %>
   <% end %>
 </ul>
