@@ -1,0 +1,15 @@
+<h1><%= @contestant.person.name %></h1>
+
+<p><%= @contestant.age %></p>
+<p><%= @contestant.hometown %></p>
+<p><%= @contestant.occupation %></p>
+<p><%= @contestant.eliminated_string %></p>
+<% if !@contestant.notes.nil? %>
+	<ul>
+		<% @contestant.notes.each do |note| %>
+			<li>
+				<%= note.body %>
+			</li>
+		<% end %>
+	</ul>
+<% end %>

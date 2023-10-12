@@ -1,0 +1,21 @@
+.contestant-list {
+	padding-left: 0;
+	list-style-type: none;
+
+}
+.contestant-list li {
+	border: 1px solid black;
+	width: 200px;
+	float: left;
+	margin: 10px;
+	padding: 10px;
+	text-align: center;
+}
+
+.contestant-list li img {
+	width: 150px;
+}
+
+.eliminated {
+	filter: grayscale(1);
+}
