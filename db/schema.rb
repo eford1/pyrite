@@ -11,12 +11,15 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2023_10_11_003944) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "contestants", force: :cascade do |t|
-    t.integer "person_id"
+    t.bigint "person_id"
     t.integer "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "season_id"
+    t.bigint "season_id"
     t.string "occupation"
     t.string "hometown"
     t.integer "eliminated_ep"
@@ -25,7 +28,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_11_003944) do
   end
 
   create_table "notes", force: :cascade do |t|
-    t.integer "contestant_id"
+    t.bigint "contestant_id"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -39,7 +42,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_11_003944) do
   end
 
   create_table "seasons", force: :cascade do |t|
-    t.integer "bachelor_id"
+    t.bigint "bachelor_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
