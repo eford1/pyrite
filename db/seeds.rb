@@ -1,9 +1,56 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+# use db:setup for now since this is not idempotent
+
+puts "creating people"
+gerry = Person.find_or_create_by({"name"=>"Gerry"})
+april = Person.find_or_create_by({"name"=>"April"})
+christina = Person.find_or_create_by({"name"=>"Christina"})
+edith = Person.find_or_create_by({"name"=>"Edith"})
+ellen = Person.find_or_create_by({"name"=>"Ellen"})
+faith = Person.find_or_create_by({"name"=>"Faith"})
+joan = Person.find_or_create_by({"name"=>"Joan"})
+kathy = Person.find_or_create_by({"name"=>"Kathy"})
+leslie = Person.find_or_create_by({"name"=>"Leslie"})
+nancy = Person.find_or_create_by({"name"=>"Nancy"})
+sandra = Person.find_or_create_by({"name"=>"Sandra"})
+susan = Person.find_or_create_by({"name"=>"Susan"})
+theresa = Person.find_or_create_by({"name"=>"Theresa"})
+jeanie = Person.find_or_create_by({"name"=>"Jeanie"})
+natascha = Person.find_or_create_by({"name"=>"Natascha"})
+peggy = Person.find_or_create_by({"name"=>"Peggy"})
+marina = Person.find_or_create_by({"name"=>"Marina"})
+anna = Person.find_or_create_by({"name"=>"Anna"})
+maria = Person.find_or_create_by({"name"=>"Maria"})
+pamela = Person.find_or_create_by({"name"=>"Pamela"})
+patty = Person.find_or_create_by({"name"=>"Patty"})
+renee = Person.find_or_create_by({"name"=>"Renee"})
+sylvia = Person.find_or_create_by({"name"=>"Sylvia"})
+
+puts "creating season"
+gb1 = Season.find_or_create_by({"bachelor_id"=>gerry.id, "name"=>"Golden Bachelor Season 1"})
+
+puts "creating contestants"
+Contestant.create({"person_id"=>jeanie.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Retired Project Manager", "hometown"=>"Estill Springs, TN", "eliminated_ep"=>2})
+Contestant.create({"person_id"=>natascha.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Pro-Aging Coach & Midlife Speaker", "hometown"=>"New York City, NY", "eliminated_ep"=>2})
+Contestant.create({"person_id"=>peggy.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Dental Hygienist", "hometown"=>"East Haven, CT", "eliminated_ep"=>2})
+marina_contestant = Contestant.create({"person_id"=>marina.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Educator", "hometown"=>"Los Angeles, CA", "eliminated_ep"=>2})
+Contestant.create({"person_id"=>anna.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Retired Nutritionist", "hometown"=>"Summit, NJ", "eliminated_ep"=>1})
+Contestant.create({"person_id"=>maria.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Health & Wellness Director", "hometown"=>"Teaneck, NJ", "eliminated_ep"=>1})
+Contestant.create({"person_id"=>pamela.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Retired Salon Owner", "hometown"=>"Aurora, IL", "eliminated_ep"=>1})
+Contestant.create({"person_id"=>patty.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Retired Real Estate Professional", "hometown"=>"Raleigh, NC", "eliminated_ep"=>1})
+Contestant.create({"person_id"=>renee.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Author", "hometown"=>"Middleton, WI", "eliminated_ep"=>1})
+Contestant.create({"person_id"=>sylvia.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Public Affairs Consultant", "hometown"=>"Los Angeles, CA", "eliminated_ep"=>1})
+Contestant.create({"person_id"=>april.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Therapist", "hometown"=>"Port St. Lucie, FL", "eliminated_ep"=>nil})
+Contestant.create({"person_id"=>christina.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Retired Purchasing Manager", "hometown"=>"Sierra Madre, CA", "eliminated_ep"=>nil})
+Contestant.create({"person_id"=>edith.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Retired Realtor", "hometown"=>"Downey, CA", "eliminated_ep"=>nil})
+Contestant.create({"person_id"=>ellen.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Retired Teacher", "hometown"=>"Delray Beach, FL", "eliminated_ep"=>nil})
+Contestant.create({"person_id"=>faith.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"High School Teacher", "hometown"=>"Benton City, WA", "eliminated_ep"=>nil})
+Contestant.create({"person_id"=>joan.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Private School Administrator", "hometown"=>"Rockville, MD", "eliminated_ep"=>nil})
+Contestant.create({"person_id"=>kathy.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Retired Educational Consultant", "hometown"=>"Austin, TX", "eliminated_ep"=>nil})
+Contestant.create({"person_id"=>leslie.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Fitness Instructor", "hometown"=>"Golden Valley, MN", "eliminated_ep"=>nil})
+Contestant.create({"person_id"=>nancy.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Retired Interior Designer", "hometown"=>"Alexandria, VA", "eliminated_ep"=>nil})
+Contestant.create({"person_id"=>sandra.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Retired Executive Assistant", "hometown"=>"Doraville, GA", "eliminated_ep"=>nil})
+Contestant.create({"person_id"=>susan.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Wedding Officiant", "hometown"=>"Aston, PA", "eliminated_ep"=>nil})
+Contestant.create({"person_id"=>theresa.id, "age"=>nil, "season_id"=>gb1.id, "occupation"=>"Financial Services Professional", "hometown"=>"Shrewsbury, NJ", "eliminated_ep"=>nil})
+
+puts "creating note"
+Note.create({"contestant_id"=>marina_contestant.id, "body"=>"Marina left the show between episodes 1 and 2 due to an \"urgent family matter.\" Gerry was informed via FaceTime."})
