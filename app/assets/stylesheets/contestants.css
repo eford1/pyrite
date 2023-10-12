@@ -19,3 +19,8 @@
 .eliminated {
 	filter: grayscale(1);
 }
+
+.footer {
+	clear: both;
+	padding-top: 20px;
+}
