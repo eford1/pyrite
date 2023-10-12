@@ -27,8 +27,15 @@ development:
   database: pyrite_dev_db
   pool: 5
   timeout: 5000
+
 test:
   adapter: postgresql
   database: pyrite_test_db
   pool: 5
   timeout: 5000
+
+production:
+  <<: *default
+  database: mysite_production
+  username: mysite
+  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
