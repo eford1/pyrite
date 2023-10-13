@@ -7,8 +7,8 @@
 	      <%= link_to contestant do %> 
 	      	<%= image_tag "/photos/#{contestant.person.name}.png" %>
 	    	<br />
-	    	<%= contestant.person.name %>
-	      <% end %>
+	    	<span class = "contestant-link"><%= contestant.person.name %>
+	      <% end %></span>
 	    </li>
 	<% end %>
   <% end %>
