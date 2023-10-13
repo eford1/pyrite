@@ -1,3 +1,4 @@
+puts "hello"
 # require 'csv'
 
 # require_relative '../../config/environment'
