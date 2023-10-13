@@ -1,7 +1,6 @@
 .contestant-list {
 	padding-left: 0;
 	list-style-type: none;
-
 }
 .contestant-list li {
 	border: 1px solid black;
@@ -28,4 +27,8 @@
 .footer {
 	clear: both;
 	padding-top: 20px;
+}
+.contestant-notes {
+	padding-left: 0;
+	list-style-type: none;
 }

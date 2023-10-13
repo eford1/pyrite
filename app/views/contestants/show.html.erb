@@ -1,16 +1,18 @@
 <h1><%= @contestant.person.name %></h1>
 <%= image_tag "/photos/#{@contestant.person.name}.png", :class => "big-pic" %>
 
-<p><%= @contestant.age %></p>
-<p><%= @contestant.hometown %></p>
-<p><%= @contestant.occupation %></p>
-<p><%= @contestant.eliminated_string %></p>
-<% if !@contestant.notes.nil? %>
-	<ul>
+<ul class = "contestant-notes">
+<li><%= @contestant.age %></li>
+<li><%= @contestant.hometown %></li>
+<li><%= @contestant.occupation %></li>
+<li><%= @contestant.eliminated_string %></li>
+<% if !@contestant.notes.nil? && @contestant.notes.size > 0 %>
+	<li>
 		<% @contestant.notes.each do |note| %>
 			<li>
 				<%= note.body %>
 			</li>
 		<% end %>
-	</ul>
+	</li>
 <% end %>
+</ul>
