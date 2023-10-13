@@ -24,5 +24,6 @@ module Pyrite
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.autoload_paths += %W(#{config.root}/lib)
+    Rails.autoloaders.main.ignore(Rails.root.join('utils/parse_constant_data.rb'))
   end
 end
