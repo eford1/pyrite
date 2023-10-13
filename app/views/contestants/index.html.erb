@@ -5,7 +5,7 @@
   	<% if contestant.eliminated_ep.nil? %>
 	    <li>
 	      <%= link_to contestant do %> 
-	      	<img src = "https://as2.ftcdn.net/v2/jpg/02/04/80/99/1000_F_204809921_XhW86kM99FdTDkkOMT9nVhloE6PiU20r.jpg" />
+	      	<%= image_tag "/photos/#{contestant.person.name}.png" %>
 	    	<br />
 	    	<%= contestant.person.name %>
 	      <% end %>
@@ -20,8 +20,8 @@
 	    <li>
 	    	
 	      <%= link_to contestant do %> 
-	      	<img src = "https://as2.ftcdn.net/v2/jpg/02/04/80/99/1000_F_204809921_XhW86kM99FdTDkkOMT9nVhloE6PiU20r.jpg" />
-	    	<br />
+	      	<%= image_tag "/photos/#{contestant.person.name}.png" %>
+	      	<br />
 	    	<%= contestant.person.name %>
 	      <% end %>
 	    </li>
