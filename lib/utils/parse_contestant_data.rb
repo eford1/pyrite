@@ -2,7 +2,7 @@ require 'csv'
 
 require_relative '../../config/environment'
 
-FILE_NAME = '/Users/elizabethford/Documents/gb1_2.csv'
+FILE_NAME = '../../db/data/gb1_2.csv'
 
 NAME_ATTR = "Name"
 AGE_ATTR = "Age"
