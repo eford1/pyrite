@@ -4,7 +4,6 @@
 	text-decoration: none;
 }
 .contestant-list li {
-	border: 1px solid black;
 	width: 200px;
 	float: left;
 	margin: 10px;
