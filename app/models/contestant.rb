@@ -7,7 +7,11 @@ class Contestant < ApplicationRecord
 
 	def eliminated_string
 		if self.eliminated_ep
-			"Eliminated episode #{self.eliminated_ep}"
+			if self.elimination_reason
+				"#{self.elimination_reason} in episode #{self.eliminated_ep}"
+			else
+				"Eliminated episode #{self.eliminated_ep}"
+			end
 		else
 			"Still here"
 		end
