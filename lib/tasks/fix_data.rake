@@ -17,9 +17,5 @@ namespace :fix_data do
       c.age = row[AGE_ATTR]
       c.save!
     end
-
-
-
-
   end
 end
