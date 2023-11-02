@@ -1,32 +1,45 @@
-<h1>Golden Bachelor Season 1</h1>
+<body class="home">
+	<h2>The Golden Bachelor</h2>
 
-<ul class = "contestant-list">
-  <% @contestants.each do |contestant| %>
-  	<% if contestant.eliminated_ep.nil? %>
-	    <li>
-	      <%= link_to contestant do %> 
-	      	<%= image_tag "/photos/#{contestant.person.name}.png" %>
-	    	<br />
-	    	<span class = "contestant-link"><%= contestant.person.name %>
-	      <% end %></span>
-	    </li>
-	<% end %>
-  <% end %>
+	<ul class = "contestant-list">
+	  <% @contestants.each do |contestant| %>
+	  	<% if contestant.eliminated_ep.nil? %>
+		    <li>
+	      	<div class = "list-photo">
+	      		<%= link_to contestant do %>
+	      			<%= image_tag "/photos/#{contestant.person.name}.png" %>
+	      		<% end %>
+	      	</div>
 
+		    	<span class = "contestant-link">
+		    		<%= link_to contestant do %> 
+		    			<%= contestant.person.name %>
+		      	<% end %>
+		      </span>
+		    </li>
+		<% end %>
+	  <% end %>
+	</ul>
 
-  <ul class = "contestant-list eliminated">
-  <% @contestants.each do |contestant| %>
-  	<% if !contestant.eliminated_ep.nil? %>
-	    <li>
-	    	
-	      <%= link_to contestant do %> 
-	      	<%= image_tag "/photos/#{contestant.person.name}.png" %>
-	      	<br />
-	    	<%= contestant.person.name %>
-	      <% end %>
-	    </li>
-	<% end %>
-  <% end %>
-</ul>
+	<ul class = "contestant-list eliminated">
+	  <% @contestants.each do |contestant| %>
+	  	<% if !contestant.eliminated_ep.nil? %>
+		    <li>
+		    	<div class = "list-photo">
+	      		<%= link_to contestant do %>
+	      			<%= image_tag "/photos/#{contestant.person.name}.png" %>
+	      		<% end %>
+	      	</div>
 
-<p class = "footer">Created by Elizabeth Ford</p>
+		    	<span class = "contestant-link">
+		    		<%= link_to contestant do %> 
+		    			<%= contestant.person.name %>
+		      	<% end %>
+		      </span>
+		    </li>
+		<% end %>
+	  <% end %>
+	</ul>
+
+	<p class = "footer">Created by Elizabeth Ford</p>
+</body>
